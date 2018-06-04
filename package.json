@@ -1,7 +1,7 @@
 {
-  "name": "react-node-starter",
+  "name": "spotify-integrations-demo",
   "version": "1.1.0",
-  "description": "an example for deploying a React + NodeJS app to Heroku",
+  "description": "A demo app for spotify integrations",
   "main": "server.js",
   "scripts": {
     "build": "webpack --config webpack.prod.config.js",

@@ -9,6 +9,9 @@ const PORT = process.env.PORT || 8080;
 const CLIENT_ID = process.env.client_id || 'fdcd98041f9b4d5582658a9d79e0c83f';
 const CLIENT_SECRET = process.env.client_secret || 'ee02b6246e40497ab607da92ad1f7e7f';
 const REDIRECT_URI = process.env.redirect_uri || 'http://localhost:8080/callback';
+console.log('redirect_uri', redirect_uri);
+console.log('client_id', client_id);
+console.log('client_secret', client_secret);
 const STATE_KEY = 'spotify_auth_state';
 // your application requests authorization
 const scopes = ['user-read-private', 'user-read-email'];

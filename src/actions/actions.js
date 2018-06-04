@@ -1,4 +1,5 @@
 import Spotify from 'spotify-web-api-js';
+import artistsIds from '../data/artists.json';
 const spotifyApi = new Spotify();
 
 // our constants
@@ -18,7 +19,7 @@ export function setTokens({ accessToken, refreshToken }) {
 export function getArtists() {
   return dispatch => {
     dispatch({ type: SPOTIFY_ARTISTS_BEGIN });
-    spotifyApi.getArtists(['2hazSY4Ef3aB9ATXW7F5w3', '6J6yx1t3nwIDyPXk5xa7O8']).then(data => {
+    spotifyApi.getArtists(artistsIds).then(data => {
       console.log('artists :getArtists', data);
       dispatch({ type: SPOTIFY_ARTISTS_SUCCESS, data: data });
     }).catch(e => {

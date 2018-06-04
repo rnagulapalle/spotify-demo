@@ -76,7 +76,7 @@ app.get('/callback', (req, res) => {
       // });
 
       // we can also pass the token to the browser to make requests from there
-      res.redirect(`/#/user/${access_token}/${refresh_token}`);
+      res.redirect(`/#/artists/${access_token}/${refresh_token}`);
     }).catch(err => {
       res.redirect('/#/error/invalid token');
     });

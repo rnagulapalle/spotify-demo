@@ -29,7 +29,7 @@ class Root extends Component {
         <Router history={hashHistory}>
           <Route path="/" component={App}>
             <IndexRoute component={Login} />
-            <Route path="/user/:accessToken/:refreshToken" component={User} />
+            {/* <Route path="/user/:accessToken/:refreshToken" component={User} /> */}
             <Route path="/error/:errorMsg" component={Error} />
             <Route path="/artists/:accessToken/:refreshToken" component={Artists} />
           </Route>

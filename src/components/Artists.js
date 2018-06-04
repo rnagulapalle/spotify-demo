@@ -10,7 +10,7 @@ class Artist extends React.Component{
   render() {
     return (
       <div className="artist">
-				This is {this.props.image}
+				{this.props.image}
       </div>
     );
   }
@@ -31,11 +31,23 @@ class Artists extends Component {
   }
   render() {
     // injected via react-router
-    // TODO: problem not able to find artists.. missing inside props
-    // need to figure out this issue..
     console.log(this.props);
     const { accessToken, refreshToken, artists } = this.props;
-    console.log('artists', artists); // it returns undefined..
+    console.log('artists inside component', artists);
+    console.log(artists.loading);
+    if (artists.loading) {
+      console.log('yes');
+      return <h2>Loading...</h2>;
+    }
+    if (!artists.artists) {
+      return <h2>Something went wrong while fetching artist</h2>;
+    }
+    // var items = [];
+    // for (var obj in artists.artists) {
+    //   items.push(<Artist image={obj.images[0].url} />);
+    // }
+
+    // return (<InfiniteGrid wrapperHeight={400} entries={items} />, document.getElementById('grid'));
     return (
       <div className="msg">
         <h2>This page is under construction!</h2>

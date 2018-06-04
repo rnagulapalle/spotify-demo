@@ -10,9 +10,9 @@ export default class SpotifyLogin extends Component {
     const {children} = this.props;
     return (
       <div className="spotify-login">
-        <h1>Example Spotify + React + React-Router Login Flow</h1>
+        <h1>Login With Spotify and See Top 50 Artists</h1>
         <div className="page-content">
-          <p>This is an example of the Authorization Code flow using routes.</p>
+          <p>This is a demo of the Login flow using Spotify Web API and retreiving top 50 artists.</p>
           {children}
         </div>
       </div>

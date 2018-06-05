@@ -9,9 +9,6 @@ const PORT = process.env.PORT || 8080;
 const CLIENT_ID = process.env.client_id || 'fdcd98041f9b4d5582658a9d79e0c83f';
 const CLIENT_SECRET = process.env.client_secret || 'ee02b6246e40497ab607da92ad1f7e7f';
 const REDIRECT_URI = process.env.redirect_uri || 'http://localhost:8080/callback';
-console.log('redirect_uri', REDIRECT_URI);
-console.log('client_id', CLIENT_ID);
-console.log('client_secret', CLIENT_SECRET);
 const STATE_KEY = 'spotify_auth_state';
 // your application requests authorization
 const scopes = ['user-read-private', 'user-read-email'];
@@ -40,7 +37,6 @@ app.get('/', function(req, res) {
  */
 app.get('/login', function(req, res){
   const state = generateRandomString(16);
-  console.log(state);
   res.cookie(STATE_KEY, state);
   res.redirect(spotifyApi.createAuthorizeURL(scopes, state));
 });
@@ -55,8 +51,6 @@ app.get('/callback', (req, res) => {
   const { code, state } = req.query;
   const storedState = req.cookies ? req.cookies[STATE_KEY] : null;
   // first do state validation
-  console.log(state);
-  console.log(storedState);
   if (state === null || state !== storedState) {
     res.redirect('/#/error/state mismatch');
   // if the state is valid, get the authorization code and pass it on to the client

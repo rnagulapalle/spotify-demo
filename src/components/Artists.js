@@ -26,10 +26,8 @@ class Artists extends Component {
 
   render() {
     // injected via react-router
-    console.log(this.props);
     const { accessToken, refreshToken, artists } = this.props;
     if (artists.loading) {
-      console.log('yes');
       return <h2>Loading...</h2>;
     }
     if (!artists.artists) {

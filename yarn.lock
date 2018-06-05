@@ -5241,12 +5241,26 @@ react-infinite-grid@^0.4.0:
     react "^0.14.2"
     react-dom "^0.14.2"
 
+react-inline-grid@^0.5.3:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/react-inline-grid/-/react-inline-grid-0.5.3.tgz#814d26fed834bd2ad859b340db6f4c6a65084588"
+  dependencies:
+    lodash "^3.10.1"
+    react-redux "^2.1.1"
+    redux "^2.0.0"
+
 react-proxy@^1.1.7:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/react-proxy/-/react-proxy-1.1.8.tgz#9dbfd9d927528c3aa9f444e4558c37830ab8c26a"
   dependencies:
     lodash "^4.6.1"
     react-deep-force-update "^1.0.0"
+
+react-redux@^2.1.1:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-2.1.2.tgz#4b26e02a7e049d1dc8ba5200999a3e153b28afc7"
+  dependencies:
+    invariant "^2.0.0"
 
 react-redux@^4.2.1:
   version "4.4.9"
@@ -5399,6 +5413,10 @@ reduce-function-call@^1.0.1:
 redux-thunk@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-1.0.3.tgz#778aa0099eea0595031ab6b39165f6670d8d26bd"
+
+redux@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/redux/-/redux-2.0.0.tgz#38923965e539496d5466f226f0a58c2238ec2a62"
 
 redux@^3.2.1:
   version "3.7.2"

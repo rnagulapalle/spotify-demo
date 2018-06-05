@@ -54,7 +54,7 @@ class Artists extends Component {
 export default connect(state => state)(Artists);
 
 
-
+// TODO: move them into seperate file and import
 
 class Title extends React.Component {
   render() {
@@ -99,7 +99,7 @@ class CardBody extends React.Component {
     return (
       <div className="card-body">
         <img className="profile" src={this.props.image}/>
-        <div className="body">
+        <div className="artist-details">
           <p>{this.props.followers} Monthly Listeners</p>
           
           <h2>{this.props.name}</h2>

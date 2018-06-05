@@ -159,6 +159,11 @@ body, html {
     
     .card-body {
         white-space: normal;
+        .profile {
+          height: 400px;
+          width: 400px;
+          border-radius: 50%;
+        }
     }
   }
 }

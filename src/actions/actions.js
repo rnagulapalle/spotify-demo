@@ -20,10 +20,18 @@ export function getArtists() {
   return dispatch => {
     dispatch({ type: SPOTIFY_ARTISTS_BEGIN });
     spotifyApi.getArtists(artistsIds).then(data => {
-      console.log('artists :getArtists', data);
+      // sort by popularity
+      sortByPopularity(data);
+      
       dispatch({ type: SPOTIFY_ARTISTS_SUCCESS, data: data });
     }).catch(e => {
       dispatch({ type: SPOTIFY_ARTISTS_FAILURE, error: e });
     });
   };
+
+  function sortByPopularity(data) {
+    data.artists.sort((a, b) => {
+      return a.popularity - b.popularity;
+    }).reverse();
+  }
 }

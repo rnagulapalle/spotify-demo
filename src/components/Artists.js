@@ -58,7 +58,7 @@ class Artist extends React.Component{
   }
 }
 
-/**
+/** 
  * Our error page
  * Displays the error
  */
@@ -85,7 +85,6 @@ class Artists extends Component {
     });
   }
 
-
   render() {
     // injected via react-router
     console.log(this.props);
@@ -109,16 +108,16 @@ class Artists extends Component {
     // return (<InfiniteGrid wrapperHeight={400} entries={items} />, document.getElementById('grid'));
     return (
       <div>
-      <header className="app-header"></header>
-      <Title />
-      <div className="app-card-list" id="app-card-list">
-        {
-          Object
-          .keys(this.state.posts)
-          .map(key => <Card key={key} index={key} details={this.state.posts[key]}/>)
-        }
-    </div>
-    </div>
+        <header className="app-header"></header>
+        <Title />
+        <div className="app-card-list" id="app-card-list">
+          {
+            Object
+            .keys(artists.artists)
+            .map(key => <Card key={key} index={key} details={artists.artists[key]}/>)
+          }
+        </div>
+      </div>
     );
   }
 }
@@ -140,27 +139,27 @@ class Title extends React.Component {
   }
 }
 
-
 class Button extends React.Component {
   render() {
     return (
-      <button className="button button-primary">
-        <i className="fa fa-chevron-right"></i> Find out more
-      </button>
+      <a href={this.props.url} target="_blank">
+        <button className="button button-primary">
+          <i className="fa fa-chevron-right"></i> Find out more
+        </button>
+      </a>
     )
   }
 }
 
-
 class CardHeader extends React.Component {
   render() {
-    const { image, category } = this.props;
+    const { image, type } = this.props;
     var style = { 
         backgroundImage: 'url(' + image + ')',
     };
     return (
       <header style={style} className="card-header">
-        <h4 className="card-header--title">{category}</h4>
+        <h4 className="card-header--title">{type}</h4>
       </header>
     )
   }
@@ -171,13 +170,12 @@ class CardBody extends React.Component {
   render() {
     return (
       <div className="card-body">
-        <p className="date">March 20 2015</p>
+        <p>Followers: {this.props.followers}</p>
         
-        <h2>{this.props.title}</h2>
+        <h2>{this.props.name}</h2>
         
-        <p className="body-content">{this.props.text}</p>
-        
-        <Button />
+        <p className="body-content">Popularity: {this.props.popularity}</p>
+        <Button url={this.props.url} />
       </div>
     )
   }
@@ -188,8 +186,8 @@ class Card extends React.Component {
   render() {
     return (
       <article className="card">
-        <CardHeader category={this.props.details.category} image={this.props.details.image}/>
-        <CardBody title={this.props.details.title} text={this.props.details.text}/>
+        <CardHeader type={this.props.details.type} image={this.props.details.images[0].url}/>
+        <CardBody url={this.props.details.external_urls.spotify} popularity={this.props.details.popularity} followers={this.props.details.followers.total} name={this.props.details.name}/>
       </article>
     )
   }

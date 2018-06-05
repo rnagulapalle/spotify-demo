@@ -1,6 +1,7 @@
 import Spotify from 'spotify-web-api-js';
 import artistsIds from '../data/artists.json';
 const spotifyApi = new Spotify();
+//import array from "lodash/array";
 
 // our constants
 export const SPOTIFY_TOKENS = 'SPOTIFY_TOKENS';
@@ -22,7 +23,6 @@ export function getArtists() {
     spotifyApi.getArtists(artistsIds).then(data => {
       // sort by popularity
       sortByPopularity(data);
-      
       dispatch({ type: SPOTIFY_ARTISTS_SUCCESS, data: data });
     }).catch(e => {
       dispatch({ type: SPOTIFY_ARTISTS_FAILURE, error: e });
